@@ -1,9 +1,5 @@
-function App() {
-  return (
-    <>
-      <h1>chalix-test</h1>
-    </>
-  );
-}
+import AppRoutes from "@/routes.tsx";
 
-export default App;
+export default function App() {
+  return <AppRoutes />;
+}
