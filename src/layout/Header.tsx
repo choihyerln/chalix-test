@@ -1,4 +1,4 @@
-import "@/styles/header.css";
+import "@/styles/Header.css";
 import Logo from "@/layout/components/Logo";
 import NavMenu from "@/layout/components/NavMenu";
 
