@@ -16,54 +16,17 @@ export default function VideoSection() {
           <div className="main-up-bottom">
             <div className="main-bottom-left">
               <h1 className="main-bottom-title">
-                <div>
-                  <span style={{ opacity: 1 }}>지</span>
-                  <span style={{ opacity: 1 }}>속</span>
-                  <span style={{ opacity: 1 }}> </span>
-                  <span style={{ opacity: 1 }}>가</span>
-                  <span style={{ opacity: 1 }}>능</span>
-                  <span style={{ opacity: 1 }}>한</span>
-                  <span style={{ opacity: 1 }}> </span>
-                  <span style={{ opacity: 1 }}>미</span>
-                  <span style={{ opacity: 1 }}>래</span>
-                  <span style={{ opacity: 1 }}>와</span>
-                  <span style={{ opacity: 1 }}> </span>
-                  <span style={{ opacity: 1 }}>고</span>
-                  <span style={{ opacity: 1 }}>객</span>
-                  <span style={{ opacity: 1 }}>의</span>
-                  <span style={{ opacity: 1 }}> </span>
-                  <span style={{ opacity: 1 }}>비</span>
-                  <span style={{ opacity: 1 }}>즈</span>
-                  <span style={{ opacity: 1 }}>니</span>
-                  <span style={{ opacity: 1 }}>스</span>
-                  <span style={{ opacity: 1 }}> </span>
-                  <span style={{ opacity: 1 }}>성</span>
-                  <span style={{ opacity: 1 }}>공</span>
-                  <span style={{ opacity: 1 }}>을</span>
-                </div>
-                <div>
-                  <span style={{ opacity: 1 }}>위</span>
-                  <span style={{ opacity: 1 }}>한</span>
-                  <span style={{ opacity: 1 }}> </span>
-                  <span style={{ opacity: 1 }}>혁</span>
-                  <span style={{ opacity: 1 }}>신</span>
-                  <span style={{ opacity: 1 }}>적</span>
-                  <span style={{ opacity: 1 }}>인</span>
-                  <span style={{ opacity: 1 }}> </span>
-                  <span style={{ opacity: 1 }}>환</span>
-                  <span style={{ opacity: 1 }}>경</span>
-                  <span style={{ opacity: 1 }}> </span>
-                  <span style={{ opacity: 1 }}>솔</span>
-                  <span style={{ opacity: 1 }}>루</span>
-                  <span style={{ opacity: 1 }}>션</span>
-                  <span style={{ opacity: 1 }}>을</span>
-                  <span style={{ opacity: 1 }}> </span>
-                  <span style={{ opacity: 1 }}>제</span>
-                  <span style={{ opacity: 1 }}>공</span>
-                  <span style={{ opacity: 1 }}>합</span>
-                  <span style={{ opacity: 1 }}>니</span>
-                  <span style={{ opacity: 1 }}>다</span>
-                </div>
+                {["지속 가능한 미래와 고객의 비즈니스 성공을", "위한 혁신적인 환경 솔루션을 제공합니다"].map(
+                  (sentence, index) => (
+                    <div key={index}>
+                      {sentence.split("").map((char, idx) => (
+                        <span key={idx} style={{ opacity: 1 }}>
+                          {char}
+                        </span>
+                      ))}
+                    </div>
+                  )
+                )}
               </h1>
             </div>
           </div>
