@@ -1,0 +1,189 @@
+.plaid-pattern-section {
+  width: 100%;
+  height: 100%;
+  padding: 210px 48px 300px;
+  background-color: #fff;
+}
+
+.plaid-pattern-section .plaid-pattern-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.plaid-pattern-section .plaid-pattern-items {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  color: #fff;
+}
+
+.plaid-pattern-section .big-point-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40%;
+  aspect-ratio: 1 / 0.85;
+  margin-top: -6rem;
+  background-color: #ff471d;
+  padding: 70px 50px;
+}
+
+.plaid-pattern-section .plaid-pattern-item {
+  background-color: #194391;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s;
+}
+
+.plaid-pattern-section .pattern-item-color {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #ff471d;
+  padding: 80px 40px 50px;
+}
+
+.plaid-pattern-section .pattern-item-color:hover {
+  background-color: #ff471d;
+}
+
+.plaid-pattern-section .pattern-item-color:hover svg {
+  transform: translate(20%, -20%) rotate(-40deg);
+}
+
+.plaid-pattern-section .pattern-item-color svg {
+  font-size: 60px;
+  transform: rotate(-40deg);
+  transition: all 0.3s;
+}
+
+.plaid-pattern-section .pattern-item-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+
+.plaid-pattern-section li {
+  width: 20%;
+  aspect-ratio: 1/1;
+}
+
+.plaid-pattern-section .plaid-pattern-icon {
+  width: fit-content;
+  margin-left: auto;
+  position: relative;
+}
+
+.plaid-pattern-section .plaid-pattern-icon img {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.plaid-pattern-section .plaid-pattern-icon img.hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.plaid-pattern-section .plaid-pattern-item:hover .plaid-pattern-icon img.default-image {
+  opacity: 0;
+}
+
+.plaid-pattern-section .plaid-pattern-item:hover .plaid-pattern-icon img.hover-image {
+  opacity: 1;
+}
+
+.plaid-pattern-section .plaid-pattern-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.plaid-pattern-section .big-point-item .plaid-pattern-title {
+  font-size: 22px;
+}
+
+.plaid-pattern-section .plaid-pattern-text {
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+  .plaid-pattern-section {
+    width: 100%;
+    padding: 200px 15px 100px;
+  }
+
+  .plaid-pattern-section li:nth-child(3) {
+    width: 167.5px;
+    height: 167.5px;
+  }
+
+  .plaid-pattern-section .big-point-item {
+    width: calc((100% / 0) * 2);
+    aspect-ratio: 1 / 0.7;
+  }
+
+  .plaid-pattern-section li {
+    width: 50%;
+  }
+
+  .plaid-pattern-section .plaid-pattern-icon {
+    width: 3.2rem;
+    height: 3.2rem;
+    overflow: hidden;
+  }
+
+  .plaid-pattern-section .plaid-pattern-item:hover .plaid-pattern-icon img.default-image,
+  .plaid-pattern-section .plaid-pattern-item .plaid-pattern-icon img.hover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .plaid-pattern-section .plaid-pattern-text {
+    font-size: 28px;
+  }
+
+  .plaid-pattern-section .plaid-pattern-title {
+    font-size: 16px;
+  }
+
+  .plaid-pattern-section .plaid-pattern-item {
+    padding: 15px;
+  }
+
+  .plaid-pattern-section li:nth-child(7) {
+    width: 167.5px;
+    height: 167.5px;
+  }
+
+  .plaid-pattern-section .pattern-item-color {
+    padding: 15px;
+  }
+
+  .plaid-pattern-section .pattern-item-btn {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  .plaid-pattern-section .pattern-item-color svg {
+    font-size: 16px;
+  }
+
+  .plaid-pattern-section .big-point-item {
+    padding: 15px;
+  }
+}
+
+.animated-text-line-wrap {
+  white-space: pre-wrap;
+}

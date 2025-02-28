@@ -31,10 +31,26 @@ li {
   list-style: none;
 }
 
+.mobile-only,
+.mobile-flex-only {
+  display: none !important;
+}
+
 @media screen and (max-width: 768px) {
   :root {
     color: #000;
     background-color: #ffffff;
+  }
+  .pc-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: block !important;
+  }
+
+  .mobile-flex-only {
+    display: flex !important;
   }
 }
 
