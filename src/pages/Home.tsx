@@ -1,5 +1,6 @@
 import CardNewsSection from "@/components/CardNews";
 import PlaidPatternSection from "@/components/PlaidPattern";
+import SlideImgSection from "@/components/SlideImg";
 import VideoSection from "@/components/VideoSection";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <VideoSection />
       <CardNewsSection />
       <PlaidPatternSection />
+      <SlideImgSection />
     </section>
   );
 }
