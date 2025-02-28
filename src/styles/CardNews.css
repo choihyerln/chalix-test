@@ -1,0 +1,166 @@
+.mom-cards-news {
+  width: 100%;
+  height: 300vh;
+  position: relative;
+  background-color: #fff;
+  color: #000;
+  margin: 200px 0;
+}
+
+.mom-cards-news .mom-card-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.mom-cards-news .mom-sticky-card-wrapper {
+  width: 100%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.mom-cards-news .mom-top-wrapper {
+  height: 30vh;
+  width: 100%;
+  padding: 95px 48px 0;
+}
+
+.mom-cards-news .mom-top-main-text {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.mom-cards-news .mom-top-btn-wrap {
+  margin-bottom: 10px;
+  height: fit-content;
+}
+
+.mom-cards-news .mom-cards-wrapper {
+  display: flex;
+  gap: 20px;
+  height: 70vh;
+  width: 250%;
+  padding: 0 0 36px 48px;
+}
+
+.mom-cards-news .mom-cards-unit {
+  background: white;
+  position: relative;
+  filter: brightness(0.7);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+}
+
+.mom-cards-news .mom-cards-unit {
+  transition: width 0.5s ease-in-out;
+}
+
+.mom-cards-news .mom-cards-unit .txt-box {
+  position: absolute;
+  top: 0;
+  padding: 36px;
+}
+
+.mom-cards-news .mom-cards-unit .main-bottom-unit-back {
+  width: 100%;
+  height: 100%;
+}
+
+.mom-cards-news .mom-cards-unit .main-bottom-unit-back .main-bottom-unit-img-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.mom-cards-news .mom-cards-unit .main-bottom-unit-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mom-cards-news .mom-cards-unit:hover {
+  background: black;
+  color: #fff;
+  border-right: 1px solid #4a4a4a;
+  filter: brightness(1);
+}
+
+.mom-cards-news .mom-cards-unit:hover .mom-card-main-text {
+  color: #fff;
+}
+
+.mom-cards-news .mom-card-top-num {
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  background: #1a428e;
+  color: #fff;
+  border-radius: 50%;
+  align-self: flex-end;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 30px;
+  display: none;
+}
+
+.mom-cards-news .mom-cards-unit:hover .mom-card-top-num {
+  width: 10px;
+  height: 10px;
+  font-size: 0;
+}
+
+.mom-cards-news .mom-card-main-text {
+  font-size: 44px;
+  color: #fff;
+  font-weight: 500;
+  line-height: 50px;
+  margin-bottom: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.mom-cards-news .mom-card-context {
+  color: #fff;
+  font-size: 22px;
+  width: 350px;
+}
+
+.mom-cards-news .mom-cards-unit:hover .mom-card-bottom-btn {
+  bottom: 50px;
+}
+
+.mom-cards-news .mom-card-bottom-btn {
+  background: blue;
+  color: #fff;
+  padding: 5px 30px;
+  border-radius: 5px;
+  width: fit-content;
+  position: absolute;
+  bottom: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.mom-cards-news .ten-top-text.sub.gray-text {
+  color: gray;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.mom-cards-news .ten-top-text.sub {
+  font-size: 44px;
+  color: #000;
+  font-weight: 500;
+  font-family:
+    Pretendard Variable,
+    sans-serif;
+  overflow: hidden;
+}
+
+.mom-cards-news .ten-top-text.sub > span {
+  display: inline-block;
+}
