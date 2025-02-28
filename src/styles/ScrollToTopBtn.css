@@ -19,6 +19,7 @@
 }
 
 .flexd-top-section .cover {
+  all: unset;
   position: relative;
   width: 100%;
   height: 100%;
@@ -27,4 +28,9 @@
   z-index: 50;
   cursor: pointer;
   align-items: center;
+}
+
+.flexd-top-section:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
 }
