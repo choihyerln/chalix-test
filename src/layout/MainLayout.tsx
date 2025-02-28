@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "@/layout/Header";
 import ScrollToTopBtn from "@/components/ScrollToTopBtn";
+import Footer from "@/layout/Footer";
 
 export default function MainLayout() {
   return (
@@ -10,6 +11,7 @@ export default function MainLayout() {
       <main>
         <Outlet />
       </main>
+      <Footer />
     </>
   );
 }
