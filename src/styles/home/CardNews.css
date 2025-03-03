@@ -159,6 +159,7 @@
     Pretendard Variable,
     sans-serif;
   overflow: hidden;
+  white-space: pre-wrap;
 }
 
 .mom-cards-news .ten-top-text.sub > span {
