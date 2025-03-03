@@ -1,6 +1,6 @@
-import "@/styles/Header.css";
-import Logo from "@/layout/components/Logo";
-import NavMenu from "@/layout/components/NavMenu";
+import "@/styles/layout/Header.css";
+import Logo from "@/components/layout/Logo";
+import NavMenu from "@/components/layout/NavMenu";
 
 export default function Header() {
   return (

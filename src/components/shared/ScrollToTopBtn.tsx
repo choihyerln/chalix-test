@@ -1,4 +1,4 @@
-import "@/styles/ScrollToTopBtn.css";
+import "@/styles/shared/ScrollToTopBtn.css";
 
 export default function ScrollToTopBtn() {
   const handleTop = () => {

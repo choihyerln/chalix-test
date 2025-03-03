@@ -1,4 +1,4 @@
-import "@/styles/CardNews.css";
+import "@/styles/home/CardNews.css";
 
 export default function CardNews() {
   return (

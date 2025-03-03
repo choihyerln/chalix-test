@@ -1,7 +1,7 @@
-import CardNewsSection from "@/components/CardNews";
-import PlaidPatternSection from "@/components/PlaidPattern";
-import SlideImgSection from "@/components/SlideImg";
-import VideoSection from "@/components/VideoSection";
+import CardNewsSection from "@/components/home/CardNews";
+import PlaidPatternSection from "@/components/home/PlaidPattern";
+import SlideImgSection from "@/components/home/SlideImg";
+import VideoSection from "@/components/home/VideoSection";
 
 export default function Home() {
   return (

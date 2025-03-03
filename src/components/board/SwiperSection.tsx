@@ -1,4 +1,4 @@
-import "@/styles/SwiperSection.css";
+import "@/styles/board/SwiperSection.css";
 
 export default function SwiperSection() {
   return (

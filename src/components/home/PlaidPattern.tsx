@@ -1,4 +1,4 @@
-import "@/styles/PlaidPattern.css";
+import "@/styles/home/PlaidPattern.css";
 
 export default function PlaidPattern() {
   return (

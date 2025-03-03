@@ -1,4 +1,4 @@
-import "@/styles/VideoSection.css";
+import "@/styles/home/VideoSection.css";
 
 export default function VideoSection() {
   return (

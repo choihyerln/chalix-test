@@ -8,3 +8,4 @@
 - [TypeScript](https://www.typescriptlang.org/) - Programming Language
 - [Jotai](https://jotai.org/) - State Management
 - [pnpm](https://pnpm.io/) - Package Manager
+- [GSAP](https://gsap.com/) - Animation Library

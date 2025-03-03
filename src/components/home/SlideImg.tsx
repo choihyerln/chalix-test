@@ -1,4 +1,4 @@
-import "@/styles/SlideImg.css";
+import "@/styles/home/SlideImg.css";
 
 export default function SlideImg() {
   return (
