@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainLayout from "@/layout/MainLayout";
 import Home from "@/pages/Home";
+import Presentation from "@/pages/Presentation";
 
 export default function AppRoutes() {
   return (
@@ -8,7 +9,7 @@ export default function AppRoutes() {
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/detail/:name" />
+          <Route path="/presentation" element={<Presentation />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -39,7 +39,9 @@ export default function NavMenu() {
         <ul className="sub-lists">
           <li className="sub-li">
             <a className="sub-link">사업실적</a>
-            <a className="sub-link">발표논문</a>
+            <a aria-current="page" className="sub-link" href="/presentation">
+              발표논문
+            </a>
             <a className="sub-link">NEWS</a>
           </li>
         </ul>
