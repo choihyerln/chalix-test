@@ -3,7 +3,7 @@ import data from "@/database/chailx.json";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { PresentationReq } from "@/types/presentation";
-import { getKSTISOString } from "@/utils/getKSTDate";
+import { getKSTISOString } from "@/utils/dateUtils";
 
 export default function PresentationCreatePage() {
   const navigate = useNavigate();
