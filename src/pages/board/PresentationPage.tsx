@@ -1,7 +1,7 @@
 import PresentationList from "@/components/board/PresentationList";
 import SwiperSection from "@/components/board/SwiperSection";
 
-export default function Presentation() {
+export default function PresentationPage() {
   return (
     <div>
       <SwiperSection />
