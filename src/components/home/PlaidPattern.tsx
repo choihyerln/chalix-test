@@ -1,6 +1,16 @@
 import "@/styles/home/PlaidPattern.css";
+import { useEffect } from "react";
+import { gsap } from "gsap";
 
 export default function PlaidPattern() {
+  useEffect(() => {
+    gsap.fromTo(
+      ".animated-text-line-wrap span",
+      { y: "100%", opacity: 0 },
+      { y: "0%", opacity: 1, duration: 1, stagger: 0.05, ease: "power2.out" }
+    );
+  }, []);
+
   return (
     <section className="plaid-pattern-section">
       <div className="plaid-pattern-inner">
