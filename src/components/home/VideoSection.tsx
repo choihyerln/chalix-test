@@ -1,6 +1,16 @@
 import "@/styles/home/VideoSection.css";
+import { useEffect } from "react";
+import { gsap } from "gsap";
 
 export default function VideoSection() {
+  useEffect(() => {
+    gsap.fromTo(
+      ".main-bottom-title span",
+      { y: "100%", opacity: 0 },
+      { y: "0%", opacity: 1, duration: 1, stagger: 0.04, ease: "power2.out" }
+    );
+  }, []);
+
   return (
     <section className="main-video-section">
       <div className="main-video-container">
