@@ -1,10 +1,11 @@
 .mom-cards-news {
   width: 100%;
-  height: 300vh;
+  height: 100vh;
   position: relative;
   background-color: #fff;
   color: #000;
   margin: 200px 0;
+  overflow: hidden;
 }
 
 .mom-cards-news .mom-card-wrapper {
@@ -164,4 +165,23 @@
 
 .mom-cards-news .ten-top-text.sub > span {
   display: inline-block;
+}
+
+.mom-cards-unit {
+  flex: 0 0 calc(25% - 15px);
+  min-width: calc(25% - 15px);
+  position: relative;
+  transition: all 0.5s ease;
+  will-change: transform;
+}
+.project-portfolio-list-subject {
+  display: inline-block;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.project-portfolio-list-subject.active {
+  transform: translateY(0);
+  opacity: 1;
 }
