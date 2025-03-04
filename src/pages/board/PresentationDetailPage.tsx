@@ -1,6 +1,7 @@
 import "@/styles/board/PresentationDetail.css";
 import { useNavigate, useParams } from "react-router-dom";
 import data from "@/database/chailx.json";
+import { formatDate } from "@/utils/dateUtils";
 
 export default function PresentationDetailPage() {
   const { id } = useParams();
@@ -32,13 +33,18 @@ export default function PresentationDetailPage() {
           <span>{paper.brd_title}</span>
         </div>
         <div className="detail-item">
-          <label>날짜</label>
-          <span>{paper.reg_datetime ? paper.reg_datetime.split("T")[0] : "-"}</span>
-        </div>
-        <div className="detail-item">
           <label>비고</label>
           <span>{paper.brd_ext1}</span>
         </div>
+        <div className="detail-item">
+          <label>등록일</label>
+          <span>{paper.reg_datetime ? formatDate(paper.reg_datetime) : "-"}</span>
+        </div>
+        <div className="detail-item">
+          <label>최종 수정일</label>
+          <span>{paper.upd_datetime ? formatDate(paper.upd_datetime) : "-"}</span>
+        </div>
+
         <div className="button-container">
           <button className="back-btn" onClick={() => navigate("/presentation")}>
             목록으로
