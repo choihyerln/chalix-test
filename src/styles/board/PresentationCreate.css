@@ -48,23 +48,6 @@
   font-size: 1.1rem;
 }
 
-/* 날짜 */
-input[type="date"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: #fff;
-}
-
-input[type="date"]:focus {
-  outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
 /* 오류 메시지 */
 .error-message {
   color: red;
@@ -73,15 +56,6 @@ input[type="date"]:focus {
 }
 
 /* 버튼 */
-button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
 .button-container {
   display: flex;
   justify-content: space-between;

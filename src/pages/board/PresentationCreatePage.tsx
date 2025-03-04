@@ -3,7 +3,7 @@ import data from "@/database/chailx.json";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { PresentationReq } from "@/types/presentation";
-import { format } from "date-fns";
+import { getKSTISOString } from "@/utils/getKSTDate";
 
 export default function PresentationCreatePage() {
   const navigate = useNavigate();
@@ -15,26 +15,27 @@ export default function PresentationCreatePage() {
   } = useForm<PresentationReq>();
 
   const storedData = localStorage.getItem("presentations");
-  const existingList = storedData ? JSON.parse(storedData) : data.list;
-  const today = format(new Date(), "yyyy-MM-dd");
+  const oldList = storedData ? JSON.parse(storedData) : data.list;
 
   const onSubmit = (newData: PresentationReq) => {
-    const maxBrdIdx =
-      existingList.length > 0 ? Math.max(...existingList.map((item: { brd_idx: number }) => item.brd_idx)) : 0;
+    const maxBrdIdx = oldList.length > 0 ? Math.max(...oldList.map((item: { brd_idx: number }) => item.brd_idx)) : 0;
+
+    const nowKST = getKSTISOString(new Date());
 
     const newPaper = {
       brd_idx: maxBrdIdx + 1,
       brd_title: newData.brd_title,
       brd_ext2: newData.brd_ext2,
-      reg_datetime: newData.reg_datetime,
+      reg_datetime: nowKST,
+      upd_datetime: nowKST,
       brd_ext1: newData.brd_ext1,
     };
 
-    const updatedList = [...existingList, newPaper];
+    const updatedList = [...oldList, newPaper];
     localStorage.setItem("presentations", JSON.stringify(updatedList));
 
     reset();
-    navigate("/presentation");
+    navigate(`/presentation/${newPaper.brd_idx}`);
   };
 
   return (
@@ -52,18 +53,6 @@ export default function PresentationCreatePage() {
           <label>논문명</label>
           <input {...register("brd_title", { required: "논문명을 입력해주세요." })} />
           {errors.brd_title && <p className="error-message">{errors.brd_title.message}</p>}
-        </div>
-
-        <div className="form-group">
-          <label>날짜</label>
-          <input
-            type="date"
-            {...register("reg_datetime", { required: "날짜를 선택해주세요." })}
-            max={today}
-            onFocus={(e) => (e.target as HTMLInputElement).showPicker()}
-            onClick={(e) => (e.target as HTMLInputElement).showPicker()}
-          />
-          {errors.reg_datetime && <p className="error-message">{errors.reg_datetime.message}</p>}
         </div>
 
         <div className="form-group">
