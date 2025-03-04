@@ -3,6 +3,7 @@
   width: 100%;
   height: 100vh;
   z-index: 10;
+  overflow: hidden;
 }
 
 .angel-swiper-section1 .angel-swiper-container {
@@ -11,41 +12,48 @@
   height: 100vh;
 }
 
-.angel-swiper-section1 .angel-swiper-container:before {
+/* 그라데이션 오버레이 */
+.angel-swiper-section1 .angel-swiper-container::before,
+.angel-swiper-section1 .angel-swiper-container::after {
   content: "";
+  position: absolute;
   width: 100%;
   height: 100px;
-  position: absolute;
+  left: 0;
+  z-index: 5;
+}
+
+.angel-swiper-section1 .angel-swiper-container::before {
   top: 0;
-  left: 0;
-  z-index: 5;
 }
 
-.angel-swiper-section1 .angel-swiper-container:after {
-  content: "";
-  width: 100%;
-  height: 100px;
+.angel-swiper-section1 .angel-swiper-container::after {
+  bottom: 0;
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(15, 15, 15, 0.7));
-  position: absolute;
-  bottom: 0%;
-  left: 0;
-  z-index: 5;
 }
 
+/* 스와이퍼 기본 스타일 */
 .angel-swiper-section1 .angel-swiper {
+  position: relative;
   width: 100%;
   height: 100%;
 }
 
 .angel-swiper-section1 .angel-swiper-slide {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   padding: 0 48px;
+  transition: opacity 0.5s ease-in-out;
 }
 
+.angel-swiper-slide.active {
+  z-index: 1;
+}
+
+/* 이미지 관련 스타일 */
 .angel-swiper-section1 .angel-main-swiper-imgWrap {
   position: absolute;
   top: 0;
@@ -63,6 +71,7 @@
   transition: 4s;
 }
 
+/* 컨텐츠 스타일 */
 .angel-swiper-section1 .angel-main-swiper-content {
   position: relative;
   width: 100%;
@@ -80,16 +89,6 @@
   opacity: 1;
 }
 
-.angel-swiper-section1 .angel-main-swiper-content-inner-line {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.angel-swiper-section1 .angel-main-swiper-content-inner-line2 {
-  margin-top: 6px;
-}
-
 .angel-swiper-section1 .angel-main-swiper-title {
   color: #fff;
   font-weight: 600;
@@ -98,87 +97,7 @@
   font-size: 60px;
 }
 
-.angel-swiper-section1 .angel-main-swiper-title .middle-title {
-  font-weight: 700;
-  letter-spacing: -2px;
-  font-size: 60px;
-}
-
-.angel-swiper-section1 .angel-main-swiper-title .bold-title {
-  font-weight: 900;
-  letter-spacing: -8px;
-  font-size: 140px;
-}
-
-.angel-swiper-section1 .angel-main-swiper-description {
-  color: #fff;
-  font-weight: 300;
-  letter-spacing: 0px;
-  line-height: 1;
-  font-size: 20px;
-  overflow: hidden;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.angel-swiper-section1 .angel-main-swiper-description-span {
-  display: block;
-  transition: 0.3s;
-  transform: translateY(100%);
-}
-
-.angel-swiper-section1 .swiper-slide-active .angel-main-swiper-description-span {
-  transform: translateY(0);
-}
-
-.angel-swiper-section1 .angel-main-swiper-description.middle-description {
-  letter-spacing: normal;
-}
-
-.angel-swiper-section1 .angel-main-btn-container {
-  display: flex;
-  gap: 10px;
-  padding-top: 50px;
-}
-
-.angel-swiper-section1 .angel-main-btn-container .angel-main-btn-wrap {
-  width: fit-content;
-  color: #fff;
-  border-radius: 2rem;
-  cursor: pointer;
-  padding: 7px 15px;
-  margin-top: 0;
-  font-size: 16px;
-  background-color: #00000080;
-}
-
-.angel-swiper-section1 .swiper-slide-active .angel-main-btn-animate a {
-  color: #fff;
-}
-
-.angel-swiper-section1 .angel-main-swiper-cover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  transition: 0.3s;
-  opacity: 0;
-  visibility: hidden;
-  z-index: 2;
-}
-
-.angel-swiper-section1 .swiper-slide-active .angel-main-swiper-cover {
-  opacity: 1;
-  transition: opacity 0.5s;
-}
-
-.angel-swiper-section1 .angel-swiper-slide.active .angel-main-swiper-cover {
-  opacity: 1;
-  visibility: visible;
-}
-
+/* 페이지네이션 스타일 */
 .angel-swiper-section1 .angel-main-pagination-wrap {
   position: absolute;
   bottom: 25px;
@@ -187,6 +106,7 @@
   display: flex;
   justify-content: space-between;
   z-index: 10;
+  padding: 0 48px;
 }
 
 .angel-swiper-section1 .angel-main-pagination {
@@ -196,46 +116,18 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  cursor: pointer;
-}
-
-.angel-swiper-section1 .angel-main-pagination a {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-}
-
-.angel-swiper-section1 .text-visible {
-  opacity: 1;
-  transition: all 2s ease-in-out;
-}
-
-.angel-swiper-section1 .text-hidden {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 2s ease-in-out;
-}
-
-.angel-swiper-section1 .content-wrapper {
-  position: relative;
-}
-
-.angel-swiper-section1 .sub-ab-box .fade-in {
-  animation: angel-fade-in 0.3s linear forwards;
-}
-
-.angel-swiper-section1 .sub-ab-box .fade-out {
-  animation: angel-fade-out 0.3s linear forwards;
+  cursor: pointer;
 }
 
 .angel-swiper-section1 .angel-main-pagination-name {
   font-size: 18px;
   color: #fff9;
+  transition: color 0.3s;
 }
 
-.angel-swiper-section1 .angel-main-pagination.active .angel-main-pagination-name {
+.angel-swiper-section1 .angel-main-pagination.active .angel-main-pagination-name,
+.angel-swiper-section1 .angel-main-pagination a:hover .angel-main-pagination-name {
   color: #fff;
   font-weight: 500;
 }
@@ -246,10 +138,6 @@
   height: 1px;
   overflow: hidden;
   background-color: #ffffff80;
-}
-
-.angel-swiper-section1 .angel-main-pagination a:hover .angel-main-pagination-name {
-  color: #fff;
 }
 
 .angel-swiper-section1 .angel-main-line {
@@ -264,11 +152,8 @@
 
 .angel-swiper-section1 .angel-main-pagination.active .angel-main-line {
   transform: translate(0);
-  transition: 0s;
-  transition-delay: 0s;
   height: 3px;
   top: 0;
-  background-color: #fff;
 }
 
 .angel-swiper-section1 .angel-main-pagination.active .angel-main-line-wrap {
@@ -276,66 +161,7 @@
   top: -2px;
 }
 
-.angel-swiper-section1 .test-chart-mui svg path {
-  stroke-dasharray: 0;
-  stroke-dashoffset: 0;
-  transition: none;
-}
-
-.angel-swiper-section1 .sub-ab-box {
-  width: 432px;
-  height: 650px;
-  position: absolute;
-  right: 2rem;
-  top: 8rem;
-  z-index: 999;
-  border-radius: 0.5rem;
-  overflow: hidden;
-}
-
-.angel-swiper-section1 .sub-ab-box .ab-cover {
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  padding: 50px 40px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  transition: opacity 2s ease;
-}
-
-.angel-swiper-section1 .sub-ab-box .ab-cover .tit {
-  font-size: 1.5rem;
-  padding-bottom: 10px;
-}
-
-.angel-swiper-section1 .sub-ab-box .ab-cover .txt {
-  font-size: 0.8rem;
-}
-
-.angel-swiper-section1 .sub-ab-box .btm-top-wrapper,
-.angel-swiper-section1 .txt-box {
-  width: 100%;
-  opacity: 0;
-}
-
-.angel-swiper-section1 .sub-ab-box .btm-top-wrapper .num {
-  font-size: 3.125vw;
-  color: #ddd;
-  font-weight: 600;
-}
-
-.angel-swiper-section1 .sub-ab-box .btm-top-wrapper .abtxt {
-  font-size: 30px;
-  color: #000;
-  font-weight: 600;
-}
-
-.angel-swiper-section1 .angel-swiper {
-  position: relative;
-  top: -20px;
-}
-
+/* 반응형 스타일 */
 @media screen and (max-width: 1440px) {
   .angel-swiper-section1 .angel-swiper-slide {
     padding: 0 60px;
@@ -365,55 +191,12 @@
 }
 
 @media screen and (max-width: 768px) {
-  .angel-swiper-section1 .angel-main-swiper-content {
-    padding-bottom: 40px;
-  }
-
-  .angel-swiper-section1 .angel-main-swiper-content-line1 {
-    margin-bottom: 20px;
-  }
-
   .angel-swiper-section1 .angel-swiper-slide {
     padding: 50px 16px;
   }
 
   .angel-swiper-section1 .angel-main-swiper-title {
     font-size: 24px;
-  }
-
-  .angel-swiper-section1 .sub-ab-box {
-    width: 240px;
-    height: 350px;
-    right: 1rem;
-  }
-
-  .angel-swiper-section1 .angel-main-swiper-description {
-    font-size: 18px;
-    flex-wrap: wrap;
-  }
-
-  .angel-swiper-section1 .angel-main-swiper-content-inner-line {
-    flex-direction: column;
-    align-items: unset;
-    gap: 5px;
-  }
-
-  .angel-swiper-section1 .angel-main-btn-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding-top: 50px;
-  }
-
-  .angel-swiper-section1 .angel-main-btn-container .angel-main-btn-wrap {
-    width: fit-content;
-    background-color: #00000080;
-    color: #fff;
-    border-radius: 2rem;
-    cursor: pointer;
-    padding: 4px 12px;
-    margin-top: 0;
-    font-size: 12px;
   }
 
   .angel-swiper-section1 .angel-main-pagination-wrap {
@@ -423,19 +206,10 @@
 
   .angel-swiper-section1 .angel-main-pagination {
     width: calc(50% - 10px);
-    height: unset;
     padding-bottom: 30px;
-  }
-
-  .angel-swiper-section1 .angel-main-pagination a {
-    padding-top: 10px;
   }
 
   .angel-swiper-section1 .angel-main-pagination-name {
     font-size: 14px;
-  }
-
-  .angel-swiper-section1 .swiper-slide-active .angel-main-btn-animate a {
-    color: #fff;
   }
 }

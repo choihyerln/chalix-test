@@ -1,113 +1,92 @@
+import { useEffect, useState } from "react";
 import "@/styles/board/SwiperSection.css";
 
 export default function SwiperSection() {
+  const slides = [
+    {
+      image: "https://test.chalix.co.kr/images/angel-swiper-section/7.png",
+      title: "Creating impact",
+      subtitle: "through meaningful solutions",
+      category: "사업실적",
+    },
+    {
+      image: "https://test.chalix.co.kr/images/angel-swiper-section/8.png",
+      title: "Driving innovation",
+      subtitle: "with impactful research",
+      category: "발표논문",
+    },
+    {
+      image: "https://test.chalix.co.kr/images/angel-swiper-section/9.png",
+      title: "Providing real-time updates",
+      subtitle: "on the latest industry developments",
+      category: "NEWS",
+    },
+  ];
+
+  // URL에서 category 파라미터 확인
+  const getInitialSlide = () => {
+    const params = new URLSearchParams(window.location.search);
+    const category = params.get("category");
+    const index = slides.findIndex((slide) => slide.category === category);
+    return index >= 0 ? index : 0;
+  };
+  const [currentSlide, setCurrentSlide] = useState(getInitialSlide());
+
+  // URL이 변경될 때마다 슬라이드 업데이트
+  useEffect(() => {
+    setCurrentSlide(getInitialSlide());
+  }, [window.location.search]);
+
+  const handlePaginationClick = (index: number) => {
+    setCurrentSlide(index);
+  };
+
   return (
     <div>
       <section className="angel-swiper-section1">
         <div className="angel-swiper-container">
-          <div className="swiper swiper-initialized swiper-horizontal swiper-watch-progress angel-swiper swiper-backface-hidden">
-            <div
-              className="swiper-wrapper"
-              style={{
-                transitionDuration: "0ms",
-                transform: "translate3d(-1118px, 0px, 0px)",
-                transitionDelay: "0ms",
-              }}
-            >
-              {/* Slide 1 */}
-              <div className="swiper-slide angel-swiper-slide swiper-slide-prev" style={{ width: "1118px" }}>
-                <div className="angel-main-swiper-imgWrap">
-                  <img
-                    className="angel-main-swiper-video"
-                    src="https://test.chalix.co.kr/images/angel-swiper-section/7.png"
-                    alt=" 사업실적 img"
-                  />
-                </div>
-                <div className="angel-main-swiper-cover"></div>
-                <div className="angel-main-swiper-content">
-                  <div className="angel-main-swiper-content-line angel-main-swiper-content-line1">
-                    <p className="angel-main-swiper-title">Creating impact</p>
-                    <div className="angel-main-swiper-content-inner-line">
-                      <p className="angel-main-swiper-title">through meaningful solutions</p>
-                    </div>
-                  </div>
-                  <div className="angel-main-btn-container"></div>
-                </div>
-              </div>
-
-              {/* Slide 2 */}
+          <div className="angel-swiper">
+            {slides.map((slide, index) => (
               <div
-                className="swiper-slide angel-swiper-slide swiper-slide-visible swiper-slide-fully-visible swiper-slide-active"
-                style={{ width: "1118px" }}
+                key={index}
+                className={`angel-swiper-slide ${index === currentSlide ? "active" : ""}`}
+                style={{
+                  display: index === currentSlide ? "flex" : "none",
+                  opacity: index === currentSlide ? 1 : 0,
+                  transition: "opacity 0.5s ease-in-out",
+                }}
               >
                 <div className="angel-main-swiper-imgWrap">
-                  <img
-                    className="angel-main-swiper-video"
-                    src="https://test.chalix.co.kr/images/angel-swiper-section/8.png"
-                    alt="발표논문 img"
-                  />
+                  <img className="angel-main-swiper-video" src={slide.image} alt={`${slide.category} img`} />
                 </div>
                 <div className="angel-main-swiper-cover"></div>
                 <div className="angel-main-swiper-content">
                   <div className="angel-main-swiper-content-line angel-main-swiper-content-line1">
-                    <p className="angel-main-swiper-title">Driving innovation</p>
+                    <p className="angel-main-swiper-title">{slide.title}</p>
                     <div className="angel-main-swiper-content-inner-line">
-                      <p className="angel-main-swiper-title">with impactful research</p>
+                      <p className="angel-main-swiper-title">{slide.subtitle}</p>
                     </div>
                   </div>
-                  <div className="angel-main-btn-container"></div>
                 </div>
               </div>
-
-              {/* Slide 3 */}
-              <div className="swiper-slide angel-swiper-slide swiper-slide-next" style={{ width: "1118px" }}>
-                <div className="angel-main-swiper-imgWrap">
-                  <img
-                    className="angel-main-swiper-video"
-                    src="https://test.chalix.co.kr/images/angel-swiper-section/9.png"
-                    alt="NEWS img"
-                  />
-                </div>
-                <div className="angel-main-swiper-cover"></div>
-                <div className="angel-main-swiper-content">
-                  <div className="angel-main-swiper-content-line angel-main-swiper-content-line1">
-                    <p className="angel-main-swiper-title">Providing real-time updates</p>
-                    <div className="angel-main-swiper-content-inner-line">
-                      <p className="angel-main-swiper-title">on the latest industry developments</p>
-                    </div>
-                  </div>
-                  <div className="angel-main-btn-container"></div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
 
-          {/* Pagination */}
           <div className="angel-main-pagination-wrap">
-            <div className="angel-main-pagination">
-              <div className="angel-main-line-wrap">
-                <div className="angel-main-line"></div>
+            {slides.map((slide, index) => (
+              <div
+                key={index}
+                className={`angel-main-pagination ${index === currentSlide ? "active" : ""}`}
+                onClick={() => handlePaginationClick(index)}
+              >
+                <div className="angel-main-line-wrap">
+                  <div className="angel-main-line"></div>
+                </div>
+                <a>
+                  <p className="angel-main-pagination-name">{slide.category}</p>
+                </a>
               </div>
-              <a aria-current="page" className="active" href="/presentation">
-                <p className="angel-main-pagination-name">사업실적</p>
-              </a>
-            </div>
-            <div className="angel-main-pagination active">
-              <div className="angel-main-line-wrap">
-                <div className="angel-main-line"></div>
-              </div>
-              <a aria-current="page" className="active" href="/presentation">
-                <p className="angel-main-pagination-name">발표논문</p>
-              </a>
-            </div>
-            <div className="angel-main-pagination">
-              <div className="angel-main-line-wrap">
-                <div className="angel-main-line"></div>
-              </div>
-              <a aria-current="page" className="active" href="/presentation">
-                <p className="angel-main-pagination-name">NEWS</p>
-              </a>
-            </div>
+            ))}
           </div>
         </div>
       </section>
