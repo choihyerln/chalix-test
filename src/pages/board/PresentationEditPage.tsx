@@ -68,7 +68,7 @@ export default function PresentationEditPage() {
         </div>
 
         <div className="button-container">
-          <button type="button" className="cancel-btn" onClick={() => navigate("/presentation")}>
+          <button type="button" className="cancel-btn" onClick={() => navigate("/presentation?category=발표논문")}>
             취소
           </button>
           <button type="submit" className="submit-btn">

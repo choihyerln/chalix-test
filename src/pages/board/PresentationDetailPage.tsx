@@ -16,7 +16,7 @@ export default function PresentationDetailPage() {
   const handleDelete = () => {
     const updatedList = list.filter((item: { brd_idx: number }) => item.brd_idx !== Number(id));
     localStorage.setItem("presentations", JSON.stringify(updatedList));
-    navigate("/presentation");
+    navigate("/presentation?category=발표논문");
   };
 
   return (
@@ -46,7 +46,7 @@ export default function PresentationDetailPage() {
         </div>
 
         <div className="button-container">
-          <button className="back-btn" onClick={() => navigate("/presentation")}>
+          <button className="back-btn" onClick={() => navigate("/presentation?category=발표논문")}>
             목록으로
           </button>
           <div className="right-buttons">
